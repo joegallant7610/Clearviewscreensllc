@@ -1,1610 +1,1456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clearview Screens LLC - Custom Screen Murals & Professional Installation</title>
-  <meta name="description" content="Transform your screens into stunning custom murals! Professional window and door screen installation, repair, and replacement with unique custom designs.">
+  <meta charset="UTF-8" />
+  <title>Clearview Screens LLC | Pool Cage & Lanai Rescreening – Sarasota FL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Clearview Screens LLC provides pool cage & lanai rescreening, screen repairs, aluminum repairs, and pressure washing in Sarasota and surrounding areas. Licensed & insured, best to text 941-336-1836." />
+  <meta name="theme-color" content="#00b4d8" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clearview Screens LLC – Pool Cage & Lanai Rescreening" />
+  <meta property="og:description" content="Local, licensed & insured screen pros serving Sarasota and surrounding areas. Best to text 941-336-1836." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clearviewscreensllc.com" />
+  <!-- Replace with your hero image URL -->
+  <meta property="og:image" content="https://yourdomain.com/images/hero-dark.jpg" />
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Clearview Screens LLC",
+    "description": "Pool cage & lanai rescreening, screen repairs, aluminum repairs, and pressure washing in Sarasota and surrounding areas.",
+    "url": "https://clearviewscreensllc.com",
+    "telephone": "+1-941-336-1836",
+    "email": "clearviewscreensllc@gmail.com",
+    "areaServed": [
+      "Sarasota FL",
+      "Bradenton FL",
+      "Venice FL",
+      "North Port FL",
+      "Lakewood Ranch FL",
+      "Palmetto FL",
+      "Ellenton FL",
+      "Nokomis FL"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sarasota",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "07:00",
+      "closes": "19:00"
+    }],
+    "founder": "Joe Gallant"
+  }
+  </script>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --blue: #00b4d8;
+      --blue-dark: #0077b6;
+      --teal: #38b000;
+      --bg: #f5fbff;
+      --text: #102a43;
+      --accent: #ffb703;
+      --danger: #e63946;
+      --radius-lg: 18px;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.15);
+      --max-width: 1120px;
     }
 
-    :root {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      line-height: 1.5;
-      font-weight: 400;
-      color: #1a1a1a;
-      background-color: #ffffff;
-      font-synthesis: none;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      min-width: 320px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
     }
 
-    .app {
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(30, 58, 95, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -0.5px;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 3px 0;
-      transition: all 0.3s ease;
-      border-radius: 3px;
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-    }
-
-    .nav-links li a:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-cta {
-      background: #f59e0b;
-      padding: 0.75rem 1.5rem !important;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
-    .nav-cta:hover {
-      background: #d97706 !important;
-      transform: translateY(-2px);
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10rem 2rem 4rem;
-      display: flex;
-      align-items: center;
-      min-height: 100vh;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-text {
-      max-width: 800px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(245, 158, 11, 0.2);
-      color: #fbbf24;
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-      border: 2px solid rgba(245, 158, 11, 0.3);
-    }
-
-    .hero-text h2 {
-      font-size: 4rem;
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-    }
-
-    .hero-text p {
-      font-size: 1.35rem;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-      opacity: 0.95;
-      max-width: 700px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      padding: 1.125rem 2.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary {
-      background: #f59e0b;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #d97706;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1e3a5f;
-      transform: translateY(-3px);
-    }
-
-    .hero-features {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .feature-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-weight: 500;
-    }
-
-    .feature-badge .icon {
-      font-size: 1.5rem;
-    }
-
-    .custom-murals {
-      padding: 6rem 2rem;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    }
-
-    .murals-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .murals-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .header-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-
-    .murals-header h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #1e3a5f;
-      margin-bottom: 1.5rem;
-      letter-spacing: -1px;
-    }
-
-    .header-subtitle {
-      font-size: 1.25rem;
-      color: #64748b;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .murals-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .mural-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      border: 2px solid #e2e8f0;
-      position: relative;
-    }
-
-    .mural-card.popular {
-      border-color: #f59e0b;
-      box-shadow: 0 8px 16px rgba(245, 158, 11, 0.15);
-    }
-
-    .popular-badge {
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-    }
-
-    .mural-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 16px 32px rgba(30, 58, 95, 0.15);
-      border-color: #f59e0b;
-    }
-
-    .mural-icon {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
+    img {
+      max-width: 100%;
       display: block;
     }
 
-    .mural-card h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #1e3a5f;
-      margin-bottom: 1rem;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .mural-card p {
-      color: #64748b;
-      line-height: 1.8;
-      font-size: 1.05rem;
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .murals-cta {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-      border-radius: 20px;
-      padding: 4rem 3rem;
-      text-align: center;
-      color: white;
-      margin-bottom: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .murals-cta::before {
-      content: '';
-      position: absolute;
+    header {
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-      pointer-events: none;
+      z-index: 50;
+      background: rgba(245, 251, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
 
-    .cta-content {
-      position: relative;
-      z-index: 1;
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .cta-content h3 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: -0.5px;
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .cta-content p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-button {
-      background: #f59e0b;
-      color: white;
-      border: none;
-      padding: 1.25rem 3rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-    }
-
-    .cta-button:hover {
-      background: #d97706;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
-    }
-
-    .process-section {
-      margin-top: 5rem;
-    }
-
-    .process-section h3 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #1e3a5f;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .step-number {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      border-radius: 50%;
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #00b4d8);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
       font-weight: 800;
-      margin: 0 auto 1.5rem;
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+      font-size: 1.1rem;
     }
 
-    .step h4 {
-      font-size: 1.4rem;
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
       font-weight: 700;
-      color: #1e3a5f;
-      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
 
-    .step p {
+    .brand-text span:last-child {
+      font-size: 0.75rem;
       color: #64748b;
-      line-height: 1.7;
-      font-size: 1.05rem;
     }
 
-    .services {
-      padding: 6rem 2rem;
+    .nav-links {
+      display: none;
+      gap: 1rem;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(148, 163, 184, 0.15);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .badge-text {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.08);
+      color: #059669;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 0.55rem 0.95rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      box-shadow: 0 10px 25px rgba(0, 119, 182, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0, 119, 182, 0.6);
+    }
+
+    .btn-ghost {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+    }
+
+    .btn-ghost:hover {
+      background: #bae6fd;
+    }
+
+    .phone-pill {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
       background: white;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    .services-container {
-      max-width: 1200px;
+    .hero {
+      max-width: var(--max-width);
+      margin: 1.2rem auto 2rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #0369a1;
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+    }
+
+    .hero-tag span {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      color: #475569;
+      font-size: 0.96rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-bullets li::before {
+      content: "✓";
+      color: #16a34a;
+      margin-right: 0.35rem;
+      font-weight: 700;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-small-text {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    .hero-right {
+      position: relative;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.9fr;
+      gap: 0.5rem;
+    }
+
+    .hero-img-main {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .hero-img-side {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .hero-img-small {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .badge-card {
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0.75rem;
+      background: white;
+      border-radius: 16px;
+      padding: 0.55rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.78rem;
+    }
+
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 1.5rem 1rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
       margin: 0 auto;
     }
 
     .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-header h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1e3a5f;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
       margin-bottom: 1rem;
     }
 
+    .section-header h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
     .section-header p {
-      font-size: 1.2rem;
+      font-size: 0.85rem;
       color: #64748b;
+      max-width: 360px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #475569;
+      background: white;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
     }
 
-    .service-card {
-      background: #f8fafc;
-      padding: 2.5rem;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
+    .card {
       background: white;
-      box-shadow: 0 12px 24px rgba(30, 58, 95, 0.1);
-      border-color: #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 0.9rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
-    .service-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
     }
 
-    .service-card h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #1e3a5f;
-      margin-bottom: 1rem;
-    }
-
-    .service-card p {
+    .card p {
+      font-size: 0.8rem;
       color: #64748b;
-      line-height: 1.7;
-      font-size: 1rem;
+      margin-bottom: 0.3rem;
     }
 
-    .about {
-      padding: 6rem 2rem;
-      background: #f8fafc;
-    }
-
-    .about-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-
-    .about-text h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1e3a5f;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-intro {
-      font-size: 1.2rem;
-      color: #64748b;
-      line-height: 1.8;
-      margin-bottom: 3rem;
-    }
-
-    .features {
+    .card ul {
+      list-style: none;
+      font-size: 0.78rem;
+      color: #475569;
       display: grid;
-      gap: 2rem;
+      gap: 0.15rem;
+      margin-bottom: 0.4rem;
     }
 
-    .feature {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
+    .card ul li::before {
+      content: "•";
+      margin-right: 0.3rem;
+      color: var(--blue);
     }
 
-    .feature-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.75rem;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-
-    .feature-text h3 {
-      font-size: 1.3rem;
+    .price-tag {
+      font-size: 0.82rem;
       font-weight: 600;
-      color: #1e3a5f;
-      margin-bottom: 0.5rem;
+      color: var(--blue-dark);
     }
 
-    .feature-text p {
-      color: #64748b;
-      line-height: 1.7;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 3rem;
-      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-      border-radius: 16px;
-      color: white;
-      box-shadow: 0 12px 30px rgba(30, 58, 95, 0.2);
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat h3 {
-      font-size: 3.5rem;
-      font-weight: 900;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .stat p {
-      font-size: 1.1rem;
-      opacity: 0.95;
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(96, 165, 250, 0.15);
+      color: #1d4ed8;
+      display: inline-block;
+      margin-bottom: 0.15rem;
       font-weight: 500;
     }
 
-    .gallery {
-      padding: 6rem 2rem;
-      background: white;
+    .layout-2col {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 1rem;
+      align-items: flex-start;
     }
 
-    .gallery-container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .steps {
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .step-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #0369a1;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step h4 {
+      font-size: 0.86rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .mini-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .metric-pill {
+      font-size: 0.75rem;
+      background: #ecfeff;
+      border-radius: 999px;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid #a5f3fc;
+      color: #0f766e;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .price-main {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .price-main span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    .small-muted {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .highlight {
+      background: rgba(250, 250, 250, 0.9);
+      border-left: 3px solid var(--blue);
+      padding: 0.5rem 0.65rem;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      color: #475569;
+      margin-top: 0.4rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      cursor: pointer;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 0.82rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-a {
+      color: #64748b;
+      display: none;
+      margin-top: 0.15rem;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    .faq-item.open {
+      border-color: var(--blue);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.4rem;
     }
 
-    .gallery-item {
-      background: white;
-      border-radius: 16px;
+    .gallery-card {
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      border: 2px solid #e2e8f0;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 16px 32px rgba(30, 58, 95, 0.15);
-      border-color: #f59e0b;
-    }
-
-    .gallery-image-placeholder {
-      width: 100%;
-      height: 280px;
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
       position: relative;
-      overflow: hidden;
+      background: #0f172a;
     }
 
-    .gallery-image-placeholder::before {
-      content: '';
+    .gallery-caption {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: radial-gradient(circle at 30% 40%, rgba(245, 158, 11, 0.2) 0%, transparent 50%);
+      inset: auto 0 0 0;
+      padding: 0.25rem 0.4rem;
+      font-size: 0.72rem;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.88), transparent);
+      color: #e2e8f0;
     }
 
-    .placeholder-icon {
-      font-size: 5rem;
-      opacity: 0.4;
-      position: relative;
-      z-index: 1;
-    }
-
-    .category-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      z-index: 2;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-    }
-
-    .gallery-content {
-      padding: 1.75rem;
-    }
-
-    .gallery-content h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1e3a5f;
-      margin-bottom: 0.5rem;
-    }
-
-    .gallery-content p {
-      color: #64748b;
-      line-height: 1.7;
-    }
-
-    .contact {
-      padding: 6rem 2rem;
-      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-    }
-
-    .contact-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .contact-content {
+    .about-text {
+      font-size: 0.83rem;
+      color: #475569;
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 4rem;
-      margin-top: 3rem;
+      gap: 0.4rem;
     }
 
-    .contact-info {
+    .badge-row {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
     }
 
-    .info-highlight {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-      padding: 2rem;
-      border-radius: 16px;
-      color: white;
-      margin-bottom: 1rem;
-    }
-
-    .info-highlight h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .info-highlight p {
-      line-height: 1.7;
-      opacity: 0.95;
-    }
-
-    .info-item {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .info-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-
-    .info-item h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #1e3a5f;
-      margin-bottom: 0.4rem;
-    }
-
-    .info-item p {
-      color: #64748b;
-      line-height: 1.7;
-    }
-
-    .contact-form {
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
       background: white;
-      padding: 2.5rem;
-      border-radius: 16px;
-      border: 2px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      color: #475569;
     }
 
-    .success-message {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-weight: 500;
-      display: none;
-    }
-
-    .success-message.show {
-      display: block;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      color: #1e3a5f;
-      margin-bottom: 0.5rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.875rem;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: all 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #f59e0b;
-      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-group select {
-      cursor: pointer;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 1.125rem 2rem;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
-    }
-
-    .footer {
-      background: #1e3a5f;
-      color: white;
-      padding: 4rem 2rem 2rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-content {
+    .review-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .footer-section h4 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .footer-section p {
-      line-height: 1.7;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-highlight {
-      display: inline-flex;
-      align-items: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.75rem;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      padding: 0.5rem 1.25rem;
-      border-radius: 50px;
+      font-size: 0.8rem;
+    }
+
+    .review-stars {
+      color: #f59e0b;
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .review-name {
       font-weight: 600;
-      font-size: 0.9rem;
+      margin-top: 0.25rem;
     }
 
-    .footer-section ul {
-      list-style: none;
+    .review-label {
+      font-size: 0.7rem;
+      color: #94a3b8;
     }
 
-    .footer-section ul li {
-      margin-bottom: 0.75rem;
-      opacity: 0.9;
-      line-height: 1.7;
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.4rem;
+      font-size: 0.78rem;
     }
 
-    .footer-section ul li a {
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .footer-section ul li a:hover {
-      opacity: 0.7;
-      padding-left: 5px;
-      color: #fbbf24;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 2rem;
+    .area-pill {
+      background: white;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
       text-align: center;
     }
 
-    .footer-bottom p {
-      opacity: 0.8;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+      gap: 1rem;
     }
 
-    @media (max-width: 968px) {
-      .contact-content {
+    .contact-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.85rem;
+    }
+
+    .contact-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    form {
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+    }
+
+    label {
+      font-size: 0.76rem;
+      color: #64748b;
+      margin-bottom: 0.1rem;
+      display: block;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      padding: 0.45rem 0.55rem;
+      font-size: 0.82rem;
+      font-family: inherit;
+      outline: none;
+      background: #f8fafc;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.7);
+      background: white;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      background: #0b1120;
+      color: #cbd5f5;
+      font-size: 0.75rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.8rem 1rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .footer-inner a {
+      color: #bfdbfe;
+    }
+
+    .footer-tag {
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero {
         grid-template-columns: 1fr;
-        gap: 3rem;
+      }
+      .hero-right {
+        order: -1;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .areas-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .layout-2col {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        margin-top: 0.8rem;
       }
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
+    @media (max-width: 720px) {
       .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        max-width: 300px;
-        background: rgba(30, 58, 95, 0.98);
-        flex-direction: column;
-        justify-content: center;
+        display: none !important;
+      }
+      .phone-pill {
+        display: inline-flex;
+        background: #0f172a;
+        color: #e5e7eb;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
         align-items: center;
-        transition: right 0.3s ease;
-        gap: 2rem;
+        gap: 0.3rem;
       }
-
-      .nav-links.active {
-        right: 0;
+      .phone-pill span {
+        font-weight: 600;
       }
-
-      .nav-links li a {
-        font-size: 1.2rem;
+      .phone-pill small {
+        color: #9ca3af;
       }
-
-      .hero-text h2 {
-        font-size: 2.5rem;
+      .hero {
+        margin-bottom: 1.2rem;
       }
-
-      .hero-text p {
-        font-size: 1.15rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn-primary,
-      .btn-secondary {
-        width: 100%;
-      }
-
-      .hero-features {
-        justify-content: center;
-      }
-
-      .custom-murals {
-        padding: 4rem 1.5rem;
-      }
-
-      .murals-header h2 {
-        font-size: 2.25rem;
-      }
-
-      .header-subtitle {
-        font-size: 1.1rem;
-      }
-
-      .murals-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .mural-card {
-        padding: 2rem;
-      }
-
-      .murals-cta {
-        padding: 3rem 2rem;
-      }
-
-      .cta-content h3 {
-        font-size: 2rem;
-      }
-
-      .process-steps {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .process-section h3 {
-        font-size: 2rem;
-      }
-
-      .services {
-        padding: 4rem 1.5rem;
-      }
-
-      .section-header h2 {
-        font-size: 2rem;
-      }
-
       .services-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
       }
-
-      .service-card {
-        padding: 2rem;
-      }
-
-      .about {
-        padding: 4rem 1.5rem;
-      }
-
-      .about-text h2 {
-        font-size: 2rem;
-      }
-
-      .about-intro {
-        font-size: 1.1rem;
-      }
-
-      .features {
-        gap: 1.5rem;
-      }
-
-      .feature {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .about-stats {
-        padding: 2rem;
-        gap: 1.5rem;
-      }
-
-      .stat h3 {
-        font-size: 2.5rem;
-      }
-
-      .gallery {
-        padding: 4rem 1.5rem;
-      }
-
-      .gallery-grid {
+      .pricing-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
       }
-
-      .gallery-image-placeholder {
-        height: 220px;
-      }
-
-      .contact {
-        padding: 4rem 1.5rem;
-      }
-
-      .contact-form {
-        padding: 2rem;
-      }
-
-      .info-item {
-        gap: 1rem;
-      }
-
-      .info-icon {
-        width: 48px;
-        height: 48px;
-      }
-
-      .footer {
-        padding: 3rem 1.5rem 1.5rem;
-      }
-
-      .footer-content {
+      .review-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+      }
+      .gal lery-grid, .areas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      section {
+        padding: 1.1rem 1rem;
+      }
+      .badge-card {
+        position: static;
+        margin-top: 0.4rem;
       }
     }
 
-    @media (max-width: 480px) {
-      .logo h1 {
-        font-size: 1.2rem;
+    @media (min-width: 880px) {
+      .nav-links {
+        display: flex;
       }
+      .mobile-menu-btn {
+        display: none;
+      }
+      .phone-pill {
+        display: inline-flex;
+      }
+    }
 
-      .hero-text h2 {
-        font-size: 2rem;
-      }
+    /* Simple mobile nav (slide-down) */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 0.45rem 1rem 0.6rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(245, 251, 255, 0.98);
+    }
 
-      .hero-content {
-        padding: 8rem 1.5rem 3rem;
-      }
+    .mobile-nav a {
+      padding: 0.15rem 0;
+    }
 
-      .feature-badge {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-      }
+    .mobile-nav.show {
+      display: flex;
     }
   </style>
 </head>
 <body>
-  <div class="app" id="root">
-    <header class="hero">
-      <nav class="nav">
-        <div class="nav-container">
-          <div class="logo">
-            <h1>Clearview Screens LLC</h1>
-          </div>
-          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul class="nav-links" id="navLinks">
-            <li><a onclick="scrollToSection('custom-murals')">Custom Murals</a></li>
-            <li><a onclick="scrollToSection('services')">Services</a></li>
-            <li><a onclick="scrollToSection('gallery')">Gallery</a></li>
-            <li><a onclick="scrollToSection('contact')" class="nav-cta">Get Started</a></li>
-          </ul>
+<div class="page">
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-circle">CV</div>
+        <div class="brand-text">
+          <span>Clearview Screens LLC</span>
+          <span>Pool Cage & Lanai Rescreening – Sarasota & Surrounding Areas</span>
         </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-badge">Our Specialty</div>
-          <h2>Transform Your Screens Into Stunning Custom Murals</h2>
-          <p>Make your home truly unique with custom-designed screen murals. From family portraits to scenic landscapes, we turn ordinary window and door screens into extraordinary works of art.</p>
-          <div class="hero-buttons">
-            <button onclick="scrollToSection('custom-murals')" class="btn-primary">See Custom Murals</button>
-            <button onclick="scrollToSection('contact')" class="btn-secondary">Request a Quote</button>
+      <div class="nav-cta">
+        <div class="phone-pill">
+          <span><a href="tel:+19413361836">941-336-1836</a></span>
+          <small>Best to text</small>
+        </div>
+        <button class="btn btn-primary" onclick="window.location.href='sms:+19413361836?&body=Hi%20Clearview%20Screens%2C%20I%27d%20like%20a%20quote%20for%20rescreening.'">
+          Text for quote
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          Menu ▾
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services" onclick="toggleMobileNav()">Services</a>
+      <a href="#pricing" onclick="toggleMobileNav()">Pricing</a>
+      <a href="#gallery" onclick="toggleMobileNav()">Gallery</a>
+      <a href="#about" onclick="toggleMobileNav()">About</a>
+      <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
+      <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero">
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span>Licensed & Insured</span>
+            · Sarasota & surrounding areas
           </div>
-          <div class="hero-features">
-            <div class="feature-badge">
-              <span class="icon">🎨</span>
-              <span>Custom Designs</span>
+          <h1>
+            Florida-strong <span>pool cage & lanai rescreening</span> that actually looks clean.
+          </h1>
+          <p class="hero-sub">
+            Clearview Screens LLC handles full rescreens, repairs, and aluminum fixes so your pool cage looks brand new
+            and keeps the bugs out – without blowing up your budget.
+          </p>
+          <ul class="hero-bullets">
+            <li>Whole-cage rescreens, panel swaps, and door kits</li>
+            <li>18/14 & 20/20 insect screen + Super Screen options</li>
+            <li>Fast, local, and straight-up communication</li>
+          </ul>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="window.location.href='tel:+19413361836'">
+              Call now: 941-336-1836
+            </button>
+            <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+              Get a fast text quote →
+            </button>
+          </div>
+          <p class="hero-small-text">
+            Best to text • Send a few photos of your cage and we’ll ballpark it for you.
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-grid">
+            <!-- DARK PHOTO (start here) -->
+            <div class="hero-img-main">
+              <!-- Replace src with your darker “before or shaded” photo -->
+              <img src="https://via.placeholder.com/800x600.png?text=Pool+Cage+Dark+Photo" alt="Pool cage rescreening in progress">
             </div>
-            <div class="feature-badge">
-              <span class="icon">👨‍👩‍👧‍👦</span>
-              <span>Family Portraits</span>
+            <div class="hero-img-side">
+              <!-- MIDDLE PHOTO -->
+              <div class="hero-img-small">
+                <img src="https://via.placeholder.com/800x600.png?text=Pool+Cage+Clean+Photo" alt="Freshly rescreened pool cage">
+              </div>
+              <!-- MAN PHOTO -->
+              <div class="hero-img-small">
+                <img src="https://via.placeholder.com/800x600.png?text=Tech+Working+on+Screen" alt="Installer working on screen panel">
+              </div>
             </div>
-            <div class="feature-badge">
-              <span class="icon">🏔️</span>
-              <span>Scenic Views</span>
+          </div>
+
+          <div class="badge-card">
+            <div class="badge-dot"></div>
+            <div>
+              <div style="font-weight:600;font-size:0.8rem;">Same-week scheduling available</div>
+              <div style="font-size:0.72rem;color:#64748b;">Serving Sarasota, Bradenton, Venice, North Port & more.</div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <section id="custom-murals" class="custom-murals">
-      <div class="murals-container">
-        <div class="murals-header">
-          <div class="header-badge">What Makes Us Unique</div>
-          <h2>Custom Screen Murals</h2>
-          <p class="header-subtitle">Turn your ordinary window and door screens into extraordinary works of art. Our custom murals are durable, weather-resistant, and designed to last while maintaining full screen functionality.</p>
-        </div>
-        <div class="murals-grid">
-          <div class="mural-card popular">
-            <div class="popular-badge">Most Popular</div>
-            <div class="mural-icon">👨‍👩‍👧‍👦</div>
-            <h3>Family Portraits</h3>
-            <p>Cherish your loved ones with beautiful family portraits displayed on your screens. Perfect for creating lasting memories visible from inside and out.</p>
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <h2>Screen & aluminum services</h2>
+            <p>If it’s aluminum and holding screen, we probably fix it. Here’s the core stuff we do every week.</p>
           </div>
-          <div class="mural-card popular">
-            <div class="popular-badge">Most Popular</div>
-            <div class="mural-icon">🏔️</div>
-            <h3>Scenic Landscapes</h3>
-            <p>Transform your view with stunning mountain ranges, ocean vistas, forests, or any landscape that speaks to you.</p>
-          </div>
-          <div class="mural-card">
-            <div class="mural-icon">🐕</div>
-            <h3>Pet Portraits</h3>
-            <p>Celebrate your furry family members with custom pet portraits that capture their unique personality and spirit.</p>
-          </div>
-          <div class="mural-card">
-            <div class="mural-icon">🎨</div>
-            <h3>Abstract Art</h3>
-            <p>Modern, contemporary designs that add a unique artistic touch to your home's exterior.</p>
-          </div>
-          <div class="mural-card">
-            <div class="mural-icon">🦋</div>
-            <h3>Nature & Wildlife</h3>
-            <p>Bring the beauty of nature home with custom wildlife scenes, birds, butterflies, and more.</p>
-          </div>
-          <div class="mural-card">
-            <div class="mural-icon">✨</div>
-            <h3>Custom Designs</h3>
-            <p>Have something specific in mind? We'll work with you to create the perfect custom design for your screens.</p>
+          <div class="pill-row">
+            <span class="pill">Pool cage rescreening</span>
+            <span class="pill">Lanai & patio screens</span>
+            <span class="pill">Screen doors & hardware</span>
+            <span class="pill">Aluminum repairs</span>
+            <span class="pill">Pressure washing add-ons</span>
           </div>
         </div>
-        <div class="murals-cta">
-          <div class="cta-content">
-            <h3>Ready to Create Your Custom Mural?</h3>
-            <p>Let's bring your vision to life. Schedule a free consultation to discuss your custom design ideas.</p>
-            <button onclick="scrollToSection('contact')" class="cta-button">Start Your Project</button>
-          </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="chip">Most Popular</div>
+            <h3>Full pool cage rescreen</h3>
+            <p>Whole enclosure rescreened so every panel matches and the cage feels brand new again.</p>
+            <ul>
+              <li>18/14 or 20/20 screen options</li>
+              <li>Door kits, bug sweeps, and hardware</li>
+              <li>Torn panels, brittle screen, and loose spline fixed</li>
+            </ul>
+            <div class="price-tag">Typical range: $1,500 – $3,500+ depending on cage size & screen type.</div>
+          </article>
+
+          <article class="card">
+            <h3>Panel-by-panel repairs</h3>
+            <p>Just have a couple blown-out sections? We can patch things up without doing a full rescreen.</p>
+            <ul>
+              <li>Single or multiple panel replacement</li>
+              <li>Storm & tree branch damage repair</li>
+              <li>Pet & kid damage fixed cleanly</li>
+            </ul>
+            <div class="price-tag">Typical service call: from $150+ depending on panel count.</div>
+          </article>
+
+          <article class="card">
+            <h3>Lanai & front entry screens</h3>
+            <p>Entryways, patios, and side lanais cleaned up so the bugs stay out and airflow stays strong.</p>
+            <ul>
+              <li>Front entry rescreen & door closure tune-ups</li>
+              <li>Privacy and no-see-um screen upgrades</li>
+              <li>Seal-ups for gaps where critters sneak in</li>
+            </ul>
+            <div class="price-tag">Small lanais often $250 – $900, depending on layout.</div>
+          </article>
+
+          <article class="card">
+            <h3>Aluminum & extras</h3>
+            <p>We don’t just swap screen – we keep the frame tight and strong so it lasts.</p>
+            <ul>
+              <li>Minor aluminum repair & bracing</li>
+              <li>Door closers, hinges, bug sweeps</li>
+              <li>Optional pressure wash add-on for cage</li>
+            </ul>
+            <div class="price-tag">Pricing quoted after photos or quick walkthrough.</div>
+          </article>
         </div>
-        <div class="process-section">
-          <h3>How It Works</h3>
-          <div class="process-steps">
+      </div>
+    </section>
+
+    <!-- PROCESS / WHY US -->
+    <section>
+      <div class="section-inner layout-2col">
+        <div>
+          <div class="section-header" style="margin-bottom:0.6rem;">
+            <div>
+              <h2>How it works (no runaround)</h2>
+              <p>Quick quote, real pricing, and work done the right way the first time.</p>
+            </div>
+          </div>
+          <div class="steps">
             <div class="step">
               <div class="step-number">1</div>
-              <h4>Choose Your Design</h4>
-              <p>Select from our gallery or bring your own photo or idea</p>
+              <div>
+                <h4>Text us photos of your cage</h4>
+                <p>Send a few wide shots + any close-ups of damage to <strong>941-336-1836</strong>. We’ll ask a couple quick questions about size and height.</p>
+              </div>
             </div>
             <div class="step">
               <div class="step-number">2</div>
-              <h4>We Create a Proof</h4>
-              <p>Review and approve the design before production</p>
+              <div>
+                <h4>Ballpark price same day</h4>
+                <p>We’ll give you a realistic range for rescreen vs repairs, plus your options for 18/14, 20/20, or Super Screen.</p>
+              </div>
             </div>
             <div class="step">
               <div class="step-number">3</div>
-              <h4>Professional Installation</h4>
-              <p>Expert installation ensures perfect fit and finish</p>
+              <div>
+                <h4>Lock in your date</h4>
+                <p>We line up material, show when we say we’ll show, and keep you posted if weather tries to act up.</p>
+              </div>
             </div>
             <div class="step">
               <div class="step-number">4</div>
-              <h4>Enjoy Your Art</h4>
-              <p>Durable, weather-resistant murals that last for years</p>
+              <div>
+                <h4>Walkthrough before we roll out</h4>
+                <p>You walk the cage with us, check doors, and make sure everything’s tight and clean before we call it done.</p>
+              </div>
             </div>
           </div>
+          <div class="mini-metrics">
+            <span class="metric-pill">Locally owned & operated</span>
+            <span class="metric-pill">Licensed & insured</span>
+            <span class="metric-pill">Straight-up, no surprise add-ons</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section id="services" class="services">
-      <div class="services-container">
-        <div class="section-header">
-          <h2>Additional Services</h2>
-          <p>Beyond custom murals, we offer complete screen solutions</p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🪟</div>
-            <h3>Screen Installation</h3>
-            <p>Professional installation of new window and door screens with precision fitting and quality materials.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🔧</div>
-            <h3>Screen Repair</h3>
-            <p>Expert repair services for damaged screens, including tear fixes, frame straightening, and hardware replacement.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🔄</div>
-            <h3>Screen Replacement</h3>
-            <p>Complete screen replacement with upgraded materials and mesh options for better durability.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🐾</div>
-            <h3>Pet-Resistant Screens</h3>
-            <p>Heavy-duty, pet-resistant screen mesh that stands up to scratches and provides extra durability.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">☀️</div>
-            <h3>Solar Screens</h3>
-            <p>Energy-efficient solar screens that reduce heat and UV exposure while maintaining visibility.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">♻️</div>
-            <h3>Re-screening Services</h3>
-            <p>Replace old or damaged screen mesh while keeping your existing frames in great condition.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="about-container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Why Choose Clearview Screens?</h2>
-            <p class="about-intro">
-              We're not just about screens - we're about transforming your home with custom artwork
-              that's functional and beautiful. Our custom murals set us apart in the industry.
+        <div>
+          <div class="card">
+            <div class="chip">Why Clearview?</div>
+            <h3>Built by someone who actually does the work</h3>
+            <p class="small-muted">
+              You’re not talking to some random call center. You’re dealing with the person that’s actually out there in the Florida sun doing the job.
             </p>
-            <div class="features">
-              <div class="feature">
-                <div class="feature-icon">🎨</div>
-                <div class="feature-text">
-                  <h3>Custom Artistry</h3>
-                  <p>Unique custom murals that turn your screens into stunning works of art</p>
-                </div>
-              </div>
-              <div class="feature">
-                <div class="feature-icon">✓</div>
-                <div class="feature-text">
-                  <h3>Expert Craftsmanship</h3>
-                  <p>Skilled technicians with attention to detail in every installation</p>
-                </div>
-              </div>
-              <div class="feature">
-                <div class="feature-icon">💪</div>
-                <div class="feature-text">
-                  <h3>Durable Materials</h3>
-                  <p>Weather-resistant murals and premium screens built to last</p>
-                </div>
-              </div>
-              <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-text">
-                  <h3>Fast Turnaround</h3>
-                  <p>Quick and efficient service without compromising quality</p>
-                </div>
-              </div>
+            <div class="highlight">
+              We’ve rescreened everything from small lanais to big two-story cages across Sarasota, Bradenton, Venice, North Port, Palmetto, and more. 
+              If we tell you we can get it done, we mean it.
             </div>
-          </div>
-          <div class="about-stats">
-            <div class="stat">
-              <h3>15+</h3>
-              <p>Years Experience</p>
-            </div>
-            <div class="stat">
-              <h3>2000+</h3>
-              <p>Custom Murals Created</p>
-            </div>
-            <div class="stat">
-              <h3>100%</h3>
-              <p>Satisfaction Rate</p>
-            </div>
+            <ul style="margin-top:0.5rem;">
+              <li style="font-size:0.8rem;color:#475569;">We use proven screen brands suited for Florida weather</li>
+              <li style="font-size:0.8rem;color:#475569;">We don’t leave pile-ups of old screen and trash behind</li>
+              <li style="font-size:0.8rem;color:#475569;">Communication is simple: call or text, no games</li>
+            </ul>
+            <button class="btn btn-primary" style="margin-top:0.5rem;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+              Get my cage on the schedule →
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="gallery">
-      <div class="gallery-container">
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-inner">
         <div class="section-header">
-          <h2>Our Custom Mural Gallery</h2>
-          <p>See how we transform ordinary screens into extraordinary art</p>
+          <div>
+            <h2>Straight-up pricing ranges</h2>
+            <p>Every cage is different, but here’s what most Sarasota-area jobs tend to land around.</p>
+          </div>
+          <div>
+            <span class="small-muted">
+              Final price depends on cage size, height, access, screen type, and repairs needed. You’ll see your numbers before we start.
+            </span>
+          </div>
         </div>
+
+        <div class="pricing-grid">
+          <article class="card">
+            <div class="chip">Standard 18/14 screen</div>
+            <h3>Most budget-friendly</h3>
+            <p>Good airflow, solid strength, and the most common option on Florida cages.</p>
+            <div class="price-main">
+              $1,500 – $3,000+ <span>typical full cage</span>
+            </div>
+            <ul>
+              <li>Best for standard rescreens</li>
+              <li>Good durability vs cost</li>
+              <li>Great for rental properties</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="chip">20/20 “no-see-um” screen</div>
+            <h3>Smaller bugs, tighter weave</h3>
+            <p>Great if you’re close to water or sick of tiny gnats sneaking through.</p>
+            <div class="price-main">
+              $1,900 – $3,800+ <span>typical full cage</span>
+            </div>
+            <ul>
+              <li>Finer mesh, keeps smaller insects out</li>
+              <li>Slightly less airflow vs 18/14</li>
+              <li>Popular around canals & ponds</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="chip">Super Screen upgrade</div>
+            <h3>Long-life premium option</h3>
+            <p>Heavier-duty screen meant to last longer under Florida sun and storms.</p>
+            <div class="price-main">
+              $2,500 – $5,000+ <span>typical full cage</span>
+            </div>
+            <ul>
+              <li>High tear strength & UV resistant</li>
+              <li>Great for long-term homeowners</li>
+              <li>Can mix with standard in some areas</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight" style="margin-top:0.7rem;">
+          <strong>Want a fast ballpark?</strong> Text pictures of your cage to <strong>941-336-1836</strong> and mention the city you’re in.
+          We’ll give you a range and your screen options the same day in most cases.
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <h2>Before & after snapshots</h2>
+            <p>Real Florida cages, cleaned up and rescreened. Swap in your own photos here.</p>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Single-story cages</span>
+            <span class="pill">Two-story cages</span>
+            <span class="pill">Lanai enclosures</span>
+          </div>
+        </div>
+
         <div class="gallery-grid">
-          <div class="gallery-item">
-            <div class="gallery-image-placeholder">
-              <span class="placeholder-icon">🎨</span>
-              <div class="category-badge">Custom Mural</div>
-            </div>
-            <div class="gallery-content">
-              <h3>Mountain Vista Mural</h3>
-              <p>Stunning mountain landscape custom screen mural</p>
-            </div>
+          <!-- Replace all placeholder images with your real job photos -->
+          <div class="gallery-card">
+            <img src="https://via.placeholder.com/800x600.png?text=Before+Pool+Cage" alt="Before pool cage rescreening">
+            <div class="gallery-caption">Before – brittle screen, torn corners</div>
           </div>
-          <div class="gallery-item">
-            <div class="gallery-image-placeholder">
-              <span class="placeholder-icon">🎨</span>
-              <div class="category-badge">Custom Mural</div>
-            </div>
-            <div class="gallery-content">
-              <h3>Family Portrait Screen</h3>
-              <p>Beautiful family portrait on patio door screen</p>
-            </div>
+          <div class="gallery-card">
+            <img src="https://via.placeholder.com/800x600.png?text=After+Pool+Cage" alt="After pool cage rescreening">
+            <div class="gallery-caption">After – full rescreen & hardware tune-up</div>
           </div>
-          <div class="gallery-item">
-            <div class="gallery-image-placeholder">
-              <span class="placeholder-icon">🎨</span>
-              <div class="category-badge">Custom Mural</div>
-            </div>
-            <div class="gallery-content">
-              <h3>Ocean Sunset Mural</h3>
-              <p>Breathtaking ocean sunset custom design</p>
-            </div>
+          <div class="gallery-card">
+            <img src="https://via.placeholder.com/800x600.png?text=Lanai+Before" alt="Lanai before rescreening">
+            <div class="gallery-caption">Lanai – before</div>
           </div>
-          <div class="gallery-item">
-            <div class="gallery-image-placeholder">
-              <span class="placeholder-icon">🎨</span>
-              <div class="category-badge">Custom Mural</div>
-            </div>
-            <div class="gallery-content">
-              <h3>Pet Portrait Installation</h3>
-              <p>Custom dog portrait on window screen</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-image-placeholder">
-              <span class="placeholder-icon">📸</span>
-              <div class="category-badge">Installation</div>
-            </div>
-            <div class="gallery-content">
-              <h3>Modern Home Installation</h3>
-              <p>Complete screen installation with custom murals</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-image-placeholder">
-              <span class="placeholder-icon">🎨</span>
-              <div class="category-badge">Custom Mural</div>
-            </div>
-            <div class="gallery-content">
-              <h3>Forest Scene Mural</h3>
-              <p>Peaceful forest landscape custom screen</p>
-            </div>
+          <div class="gallery-card">
+            <img src="https://via.placeholder.com/800x600.png?text=Lanai+After" alt="Lanai after rescreening">
+            <div class="gallery-caption">Lanai – after</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="contact-container">
+    <!-- ABOUT + REVIEWS + AREAS -->
+    <section id="about">
+      <div class="section-inner layout-2col">
+        <div>
+          <div class="section-header" style="margin-bottom:0.6rem;">
+            <div>
+              <h2>About Clearview Screens LLC</h2>
+              <p>Local, hands-on, and built around doing solid work in the Sarasota-Manatee area.</p>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>
+              Clearview Screens LLC is a local, licensed & insured screen outfit focused on pool cages, lanais, and aluminum work.
+              You’re not dealing with a big faceless company – you’re dealing with someone who’s actually been in construction for years.
+            </p>
+            <p>
+              We show up when we say we will, keep things clean, and walk the job with you before anything gets called “done.”
+            </p>
+            <div class="badge-row">
+              <span class="badge">Licensed & insured contractor</span>
+              <span class="badge">Pool cages, lanais & entries</span>
+              <span class="badge">Sarasota-based, locally owned</span>
+            </div>
+          </div>
+
+          <div style="margin-top:0.9rem;">
+            <h3 style="font-size:0.95rem;margin-bottom:0.3rem;">Service areas</h3>
+            <div class="areas-grid">
+              <span class="area-pill">Sarasota</span>
+              <span class="area-pill">Bradenton</span>
+              <span class="area-pill">Venice</span>
+              <span class="area-pill">North Port</span>
+              <span class="area-pill">Lakewood Ranch</span>
+              <span class="area-pill">Palmetto</span>
+              <span class="area-pill">Ellenton</span>
+              <span class="area-pill">Nokomis</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size:0.95rem;margin-bottom:0.4rem;">What customers say</h3>
+          <div class="review-grid">
+            <article class="card">
+              <div class="review-stars">★★★★★</div>
+              <p>Showed up on time, knocked out a full cage rescreen, and left everything clean. Pricing was exactly what we talked about.</p>
+              <div class="review-name">Mark – Sarasota</div>
+              <div class="review-label">Full pool cage rescreen</div>
+            </article>
+            <article class="card">
+              <div class="review-stars">★★★★★</div>
+              <p>Had a couple storm-damaged panels and a sketchy screen door. Got it all fixed in one visit and the door shuts perfect now.</p>
+              <div class="review-name">Tina – Bradenton</div>
+              <div class="review-label">Panel repair & door kit</div>
+            </article>
+            <article class="card">
+              <div class="review-stars">★★★★★</div>
+              <p>Lanai and front entry both rescreened, looks way better. Loved being able to just text photos and get a ballpark first.</p>
+              <div class="review-name">Alex – Venice</div>
+              <div class="review-label">Lanai & entry rescreen</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-inner">
         <div class="section-header">
-          <h2>Get Your Custom Mural Quote</h2>
-          <p>Ready to transform your screens? Let's create something amazing together</p>
-        </div>
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="info-highlight">
-              <h3>Start Your Custom Mural Project</h3>
-              <p>Contact us today for a free consultation and quote on your custom screen mural.</p>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">📞</div>
-              <div>
-                <h4>Phone</h4>
-                <p>(555) 123-4567</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">📧</div>
-              <div>
-                <h4>Email</h4>
-                <p>info@clearviewscreens.com</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">📍</div>
-              <div>
-                <h4>Service Area</h4>
-                <p>Greater Metro Area</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">🕒</div>
-              <div>
-                <h4>Hours</h4>
-                <p>Mon-Fri: 8am-6pm<br>Sat: 9am-4pm</p>
-              </div>
-            </div>
+          <div>
+            <h2>FAQ – stuff people always ask</h2>
+            <p>Quick answers so you don’t have to guess how this works.</p>
           </div>
-          <form class="contact-form" id="contactForm">
-            <div class="success-message" id="successMessage">
-              Thank you! We'll be in touch soon to discuss your custom mural.
-            </div>
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-              <label for="service">Service Interest *</label>
-              <select id="service" name="service" required>
-                <option value="custom-mural">Custom Screen Mural</option>
-                <option value="family-portrait">Family Portrait Mural</option>
-                <option value="pet-portrait">Pet Portrait Mural</option>
-                <option value="landscape">Landscape Mural</option>
-                <option value="installation">Screen Installation</option>
-                <option value="repair">Screen Repair</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell us about your project *</label>
-              <textarea id="message" name="message" rows="5" placeholder="Describe your custom mural idea or screen needs..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Request Free Quote</button>
-          </form>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">Do I have to be home for a quote?</div>
+            <div class="faq-a">Not always. If you can text us clear photos of your cage and tell us your city, we can usually ballpark it without a site visit. For anything complex or tall two-story cages, we may swing by for a look.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How long does a full rescreen take?</div>
+            <div class="faq-a">Most single-story cages are 1–2 days depending on size and repairs. Two-story cages and heavy repair jobs can take a little longer, but we’ll tell you up front what to expect.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What type of screen should I pick?</div>
+            <div class="faq-a">18/14 is the standard go-to. 20/20 is great if you’re by water or fight a lot of small bugs. Super Screen is a heavier-duty, longer-life option. We’ll lay out the pros, cons, and price difference so you can choose.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can you just fix a few panels?</div>
+            <div class="faq-a">Yes. If the rest of the screen is in decent shape, we can swap out the worst sections and keep things matching as best as possible, then plan a full rescreen later if needed.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do you pressure wash the cage too?</div>
+            <div class="faq-a">We can add cage pressure washing as an add-on in many cases, or prep certain areas before screen work when needed. Just mention it when you reach out and we’ll price it in.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What areas do you service?</div>
+            <div class="faq-a">Sarasota, Bradenton, Venice, North Port, Lakewood Ranch, Palmetto, Ellenton, Nokomis, and nearby spots. If you’re a bit outside that, text us and we’ll see what we can do.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Clearview Screens LLC</h3>
-            <p>Transforming ordinary screens into extraordinary custom murals. Professional screen installation and repair services.</p>
-            <div class="footer-highlight">
-              <span>🎨</span>
-              <span>Custom Mural Specialists</span>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <h2>Text, call, or send it in</h2>
+            <p>Fastest way to get rolling is to text photos of your cage. You can also drop your info in the form and we’ll reach back out.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-item">
+              <div class="contact-label">Phone / Text</div>
+              <div class="contact-value">
+                <a href="tel:+19413361836">941-336-1836</a> <span style="font-size:0.78rem;color:#64748b;">(best to text)</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:clearviewscreensllc@gmail.com">clearviewscreensllc@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Typical hours</div>
+              <div class="contact-value">Mon – Sat · 7:00 AM – 7:00 PM</div>
+            </div>
+            <div class="highlight" style="margin-top:0.6rem;">
+              <strong>Pro tip:</strong> Text us your name, city, and photos of your cage. We’ll reply with a ballpark and next available dates.
             </div>
           </div>
-          <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#custom-murals">Custom Screen Murals</a></li>
-              <li><a href="#services">Screen Installation</a></li>
-              <li><a href="#services">Screen Repair</a></li>
-              <li><a href="#gallery">View Gallery</a></li>
-            </ul>
+
+          <div class="contact-card">
+            <!-- NOTE: This form won’t send anywhere until you hook it to a backend / form service. -->
+            <form>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="phone">Phone (best to text)</label>
+                <input id="phone" type="tel" placeholder="941-555-1234" required>
+              </div>
+              <div>
+                <label for="email">Email (optional)</label>
+                <input id="email" type="email" placeholder="you@example.com">
+              </div>
+              <div>
+                <label for="city">City</label>
+                <input id="city" type="text" placeholder="Sarasota, Bradenton, Venice, etc.">
+              </div>
+              <div>
+                <label for="service">What do you need?</label>
+                <select id="service">
+                  <option value="">Select one</option>
+                  <option>Full pool cage rescreen</option>
+                  <option>Lanai / patio rescreen</option>
+                  <option>Panel repairs</option>
+                  <option>Screen door repair / replacement</option>
+                  <option>Aluminum repair</option>
+                  <option>Other (describe below)</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">Details (and if you texted photos)</label>
+                <textarea id="message" placeholder="Tell us about your cage, how high it is, and if you’ve texted photos."></textarea>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="alert('Form is just a front-end demo right now. Text 941-336-1836 for the fastest quote.');">
+                Submit request
+              </button>
+              <p class="small-muted" style="margin-top:0.3rem;">
+                This form is a front-end template. For now, texting is the fastest way to lock in a quote.
+              </p>
+            </form>
           </div>
-          <div class="footer-section">
-            <h4>Contact Info</h4>
-            <ul>
-              <li>📞 (555) 123-4567</li>
-              <li>📧 info@clearviewscreens.com</li>
-              <li>📍 Greater Metro Area</li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Business Hours</h4>
-            <ul>
-              <li>Monday - Friday: 8am - 6pm</li>
-              <li>Saturday: 9am - 4pm</li>
-              <li>Sunday: Closed</li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; <span id="currentYear"></span> Clearview Screens LLC. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
 
-  <script>
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        const navLinks = document.getElementById('navLinks');
-        const menuToggle = document.getElementById('menuToggle');
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-      }
-    }
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="yearSpan"></span> Clearview Screens LLC · Licensed & Insured · Sarasota & surrounding areas
+      </div>
+      <div>
+        <a href="tel:+19413361836">Call/Text: 941-336-1836</a> · <a href="mailto:clearviewscreensllc@gmail.com">clearviewscreensllc@gmail.com</a>
+      </div>
+      <div class="footer-tag">
+        Built for Florida pool cages, lanais, and aluminum work.
+      </div>
+    </div>
+  </footer>
+</div>
 
-    document.getElementById('menuToggle').addEventListener('click', function() {
-      const navLinks = document.getElementById('navLinks');
-      const menuToggle = document.getElementById('menuToggle');
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
+<script>
+  // Mobile nav toggle
+  function toggleMobileNav() {
+    var nav = document.getElementById('mobileNav');
+    if (!nav) return;
+    nav.classList.toggle('show');
+  }
+  document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileNav);
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      item.classList.toggle('open');
     });
+  });
 
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const successMessage = document.getElementById('successMessage');
-      successMessage.classList.add('show');
-      setTimeout(function() {
-        successMessage.classList.remove('show');
-        document.getElementById('contactForm').reset();
-      }, 3000);
-    });
-
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
+  // Year in footer
+  document.getElementById('yearSpan').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
