@@ -3,10 +3,1608 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClearView Screens LLC</title>
+  <title>Clearview Screens LLC - Custom Screen Murals & Professional Installation</title>
+  <meta name="description" content="Transform your screens into stunning custom murals! Professional window and door screen installation, repair, and replacement with unique custom designs.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.5;
+      font-weight: 400;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+    }
+
+    .app {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(30, 58, 95, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 3px 0;
+      transition: all 0.3s ease;
+      border-radius: 3px;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    .nav-links li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-cta {
+      background: #f59e0b;
+      padding: 0.75rem 1.5rem !important;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .nav-cta:hover {
+      background: #d97706 !important;
+      transform: translateY(-2px);
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10rem 2rem 4rem;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text {
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      border: 2px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .hero-text h2 {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-text p {
+      font-size: 1.35rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      max-width: 700px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 1.125rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #d97706;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #1e3a5f;
+      transform: translateY(-3px);
+    }
+
+    .hero-features {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .feature-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 500;
+    }
+
+    .feature-badge .icon {
+      font-size: 1.5rem;
+    }
+
+    .custom-murals {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .murals-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .murals-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .murals-header h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #1e3a5f;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+
+    .header-subtitle {
+      font-size: 1.25rem;
+      color: #64748b;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .murals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .mural-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 2px solid #e2e8f0;
+      position: relative;
+    }
+
+    .mural-card.popular {
+      border-color: #f59e0b;
+      box-shadow: 0 8px 16px rgba(245, 158, 11, 0.15);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    .mural-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 32px rgba(30, 58, 95, 0.15);
+      border-color: #f59e0b;
+    }
+
+    .mural-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .mural-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 1rem;
+    }
+
+    .mural-card p {
+      color: #64748b;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .murals-cta {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .murals-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-content h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      background: #f59e0b;
+      color: white;
+      border: none;
+      padding: 1.25rem 3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .cta-button:hover {
+      background: #d97706;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+    }
+
+    .process-section {
+      margin-top: 5rem;
+    }
+
+    .process-section h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e3a5f;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .step h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 0.75rem;
+    }
+
+    .step p {
+      color: #64748b;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .services {
+      padding: 6rem 2rem;
+      background: white;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #64748b;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #f8fafc;
+      padding: 2.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      background: white;
+      box-shadow: 0 12px 24px rgba(30, 58, 95, 0.1);
+      border-color: #e2e8f0;
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: #64748b;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .about {
+      padding: 6rem 2rem;
+      background: #f8fafc;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-intro {
+      font-size: 1.2rem;
+      color: #64748b;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .features {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .feature {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .feature-text h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-text p {
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+      border-radius: 16px;
+      color: white;
+      box-shadow: 0 12px 30px rgba(30, 58, 95, 0.2);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .gallery {
+      padding: 6rem 2rem;
+      background: white;
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 2px solid #e2e8f0;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 32px rgba(30, 58, 95, 0.15);
+      border-color: #f59e0b;
+    }
+
+    .gallery-image-placeholder {
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-image-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 30% 40%, rgba(245, 158, 11, 0.2) 0%, transparent 50%);
+    }
+
+    .placeholder-icon {
+      font-size: 5rem;
+      opacity: 0.4;
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    .gallery-content {
+      padding: 1.75rem;
+    }
+
+    .gallery-content h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-content p {
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .contact {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-highlight {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+      padding: 2rem;
+      border-radius: 16px;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .info-highlight h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-highlight p {
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .info-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-item p {
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 2px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .success-message {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1.125rem 2rem;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+    }
+
+    .footer {
+      background: #1e3a5f;
+      color: white;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-section p {
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.75rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    .footer-section ul li a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      opacity: 0.7;
+      padding-left: 5px;
+      color: #fbbf24;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 968px) {
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background: rgba(30, 58, 95, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        gap: 2rem;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links li a {
+        font-size: 1.2rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero-text p {
+        font-size: 1.15rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .hero-features {
+        justify-content: center;
+      }
+
+      .custom-murals {
+        padding: 4rem 1.5rem;
+      }
+
+      .murals-header h2 {
+        font-size: 2.25rem;
+      }
+
+      .header-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .murals-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .mural-card {
+        padding: 2rem;
+      }
+
+      .murals-cta {
+        padding: 3rem 2rem;
+      }
+
+      .cta-content h3 {
+        font-size: 2rem;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .process-section h3 {
+        font-size: 2rem;
+      }
+
+      .services {
+        padding: 4rem 1.5rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        padding: 2rem;
+      }
+
+      .about {
+        padding: 4rem 1.5rem;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+      }
+
+      .about-intro {
+        font-size: 1.1rem;
+      }
+
+      .features {
+        gap: 1.5rem;
+      }
+
+      .feature {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .about-stats {
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+
+      .stat h3 {
+        font-size: 2.5rem;
+      }
+
+      .gallery {
+        padding: 4rem 1.5rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .gallery-image-placeholder {
+        height: 220px;
+      }
+
+      .contact {
+        padding: 4rem 1.5rem;
+      }
+
+      .contact-form {
+        padding: 2rem;
+      }
+
+      .info-item {
+        gap: 1rem;
+      }
+
+      .info-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .footer {
+        padding: 3rem 1.5rem 1.5rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1.2rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+
+      .hero-content {
+        padding: 8rem 1.5rem 3rem;
+      }
+
+      .feature-badge {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/assets/index.js"></script>
+  <div class="app" id="root">
+    <header class="hero">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="logo">
+            <h1>Clearview Screens LLC</h1>
+          </div>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links" id="navLinks">
+            <li><a onclick="scrollToSection('custom-murals')">Custom Murals</a></li>
+            <li><a onclick="scrollToSection('services')">Services</a></li>
+            <li><a onclick="scrollToSection('gallery')">Gallery</a></li>
+            <li><a onclick="scrollToSection('contact')" class="nav-cta">Get Started</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">Our Specialty</div>
+          <h2>Transform Your Screens Into Stunning Custom Murals</h2>
+          <p>Make your home truly unique with custom-designed screen murals. From family portraits to scenic landscapes, we turn ordinary window and door screens into extraordinary works of art.</p>
+          <div class="hero-buttons">
+            <button onclick="scrollToSection('custom-murals')" class="btn-primary">See Custom Murals</button>
+            <button onclick="scrollToSection('contact')" class="btn-secondary">Request a Quote</button>
+          </div>
+          <div class="hero-features">
+            <div class="feature-badge">
+              <span class="icon">🎨</span>
+              <span>Custom Designs</span>
+            </div>
+            <div class="feature-badge">
+              <span class="icon">👨‍👩‍👧‍👦</span>
+              <span>Family Portraits</span>
+            </div>
+            <div class="feature-badge">
+              <span class="icon">🏔️</span>
+              <span>Scenic Views</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="custom-murals" class="custom-murals">
+      <div class="murals-container">
+        <div class="murals-header">
+          <div class="header-badge">What Makes Us Unique</div>
+          <h2>Custom Screen Murals</h2>
+          <p class="header-subtitle">Turn your ordinary window and door screens into extraordinary works of art. Our custom murals are durable, weather-resistant, and designed to last while maintaining full screen functionality.</p>
+        </div>
+        <div class="murals-grid">
+          <div class="mural-card popular">
+            <div class="popular-badge">Most Popular</div>
+            <div class="mural-icon">👨‍👩‍👧‍👦</div>
+            <h3>Family Portraits</h3>
+            <p>Cherish your loved ones with beautiful family portraits displayed on your screens. Perfect for creating lasting memories visible from inside and out.</p>
+          </div>
+          <div class="mural-card popular">
+            <div class="popular-badge">Most Popular</div>
+            <div class="mural-icon">🏔️</div>
+            <h3>Scenic Landscapes</h3>
+            <p>Transform your view with stunning mountain ranges, ocean vistas, forests, or any landscape that speaks to you.</p>
+          </div>
+          <div class="mural-card">
+            <div class="mural-icon">🐕</div>
+            <h3>Pet Portraits</h3>
+            <p>Celebrate your furry family members with custom pet portraits that capture their unique personality and spirit.</p>
+          </div>
+          <div class="mural-card">
+            <div class="mural-icon">🎨</div>
+            <h3>Abstract Art</h3>
+            <p>Modern, contemporary designs that add a unique artistic touch to your home's exterior.</p>
+          </div>
+          <div class="mural-card">
+            <div class="mural-icon">🦋</div>
+            <h3>Nature & Wildlife</h3>
+            <p>Bring the beauty of nature home with custom wildlife scenes, birds, butterflies, and more.</p>
+          </div>
+          <div class="mural-card">
+            <div class="mural-icon">✨</div>
+            <h3>Custom Designs</h3>
+            <p>Have something specific in mind? We'll work with you to create the perfect custom design for your screens.</p>
+          </div>
+        </div>
+        <div class="murals-cta">
+          <div class="cta-content">
+            <h3>Ready to Create Your Custom Mural?</h3>
+            <p>Let's bring your vision to life. Schedule a free consultation to discuss your custom design ideas.</p>
+            <button onclick="scrollToSection('contact')" class="cta-button">Start Your Project</button>
+          </div>
+        </div>
+        <div class="process-section">
+          <h3>How It Works</h3>
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h4>Choose Your Design</h4>
+              <p>Select from our gallery or bring your own photo or idea</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h4>We Create a Proof</h4>
+              <p>Review and approve the design before production</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h4>Professional Installation</h4>
+              <p>Expert installation ensures perfect fit and finish</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h4>Enjoy Your Art</h4>
+              <p>Durable, weather-resistant murals that last for years</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="services-container">
+        <div class="section-header">
+          <h2>Additional Services</h2>
+          <p>Beyond custom murals, we offer complete screen solutions</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🪟</div>
+            <h3>Screen Installation</h3>
+            <p>Professional installation of new window and door screens with precision fitting and quality materials.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Screen Repair</h3>
+            <p>Expert repair services for damaged screens, including tear fixes, frame straightening, and hardware replacement.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔄</div>
+            <h3>Screen Replacement</h3>
+            <p>Complete screen replacement with upgraded materials and mesh options for better durability.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🐾</div>
+            <h3>Pet-Resistant Screens</h3>
+            <p>Heavy-duty, pet-resistant screen mesh that stands up to scratches and provides extra durability.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">☀️</div>
+            <h3>Solar Screens</h3>
+            <p>Energy-efficient solar screens that reduce heat and UV exposure while maintaining visibility.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">♻️</div>
+            <h3>Re-screening Services</h3>
+            <p>Replace old or damaged screen mesh while keeping your existing frames in great condition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Why Choose Clearview Screens?</h2>
+            <p class="about-intro">
+              We're not just about screens - we're about transforming your home with custom artwork
+              that's functional and beautiful. Our custom murals set us apart in the industry.
+            </p>
+            <div class="features">
+              <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-text">
+                  <h3>Custom Artistry</h3>
+                  <p>Unique custom murals that turn your screens into stunning works of art</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-text">
+                  <h3>Expert Craftsmanship</h3>
+                  <p>Skilled technicians with attention to detail in every installation</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">💪</div>
+                <div class="feature-text">
+                  <h3>Durable Materials</h3>
+                  <p>Weather-resistant murals and premium screens built to last</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-text">
+                  <h3>Fast Turnaround</h3>
+                  <p>Quick and efficient service without compromising quality</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>15+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat">
+              <h3>2000+</h3>
+              <p>Custom Murals Created</p>
+            </div>
+            <div class="stat">
+              <h3>100%</h3>
+              <p>Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="gallery-container">
+        <div class="section-header">
+          <h2>Our Custom Mural Gallery</h2>
+          <p>See how we transform ordinary screens into extraordinary art</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-image-placeholder">
+              <span class="placeholder-icon">🎨</span>
+              <div class="category-badge">Custom Mural</div>
+            </div>
+            <div class="gallery-content">
+              <h3>Mountain Vista Mural</h3>
+              <p>Stunning mountain landscape custom screen mural</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image-placeholder">
+              <span class="placeholder-icon">🎨</span>
+              <div class="category-badge">Custom Mural</div>
+            </div>
+            <div class="gallery-content">
+              <h3>Family Portrait Screen</h3>
+              <p>Beautiful family portrait on patio door screen</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image-placeholder">
+              <span class="placeholder-icon">🎨</span>
+              <div class="category-badge">Custom Mural</div>
+            </div>
+            <div class="gallery-content">
+              <h3>Ocean Sunset Mural</h3>
+              <p>Breathtaking ocean sunset custom design</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image-placeholder">
+              <span class="placeholder-icon">🎨</span>
+              <div class="category-badge">Custom Mural</div>
+            </div>
+            <div class="gallery-content">
+              <h3>Pet Portrait Installation</h3>
+              <p>Custom dog portrait on window screen</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image-placeholder">
+              <span class="placeholder-icon">📸</span>
+              <div class="category-badge">Installation</div>
+            </div>
+            <div class="gallery-content">
+              <h3>Modern Home Installation</h3>
+              <p>Complete screen installation with custom murals</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image-placeholder">
+              <span class="placeholder-icon">🎨</span>
+              <div class="category-badge">Custom Mural</div>
+            </div>
+            <div class="gallery-content">
+              <h3>Forest Scene Mural</h3>
+              <p>Peaceful forest landscape custom screen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <div class="section-header">
+          <h2>Get Your Custom Mural Quote</h2>
+          <p>Ready to transform your screens? Let's create something amazing together</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-highlight">
+              <h3>Start Your Custom Mural Project</h3>
+              <p>Contact us today for a free consultation and quote on your custom screen mural.</p>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p>(555) 123-4567</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>info@clearviewscreens.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <h4>Service Area</h4>
+                <p>Greater Metro Area</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🕒</div>
+              <div>
+                <h4>Hours</h4>
+                <p>Mon-Fri: 8am-6pm<br>Sat: 9am-4pm</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="success-message" id="successMessage">
+              Thank you! We'll be in touch soon to discuss your custom mural.
+            </div>
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interest *</label>
+              <select id="service" name="service" required>
+                <option value="custom-mural">Custom Screen Mural</option>
+                <option value="family-portrait">Family Portrait Mural</option>
+                <option value="pet-portrait">Pet Portrait Mural</option>
+                <option value="landscape">Landscape Mural</option>
+                <option value="installation">Screen Installation</option>
+                <option value="repair">Screen Repair</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your project *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your custom mural idea or screen needs..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Request Free Quote</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Clearview Screens LLC</h3>
+            <p>Transforming ordinary screens into extraordinary custom murals. Professional screen installation and repair services.</p>
+            <div class="footer-highlight">
+              <span>🎨</span>
+              <span>Custom Mural Specialists</span>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#custom-murals">Custom Screen Murals</a></li>
+              <li><a href="#services">Screen Installation</a></li>
+              <li><a href="#services">Screen Repair</a></li>
+              <li><a href="#gallery">View Gallery</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>📞 (555) 123-4567</li>
+              <li>📧 info@clearviewscreens.com</li>
+              <li>📍 Greater Metro Area</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Business Hours</h4>
+            <ul>
+              <li>Monday - Friday: 8am - 6pm</li>
+              <li>Saturday: 9am - 4pm</li>
+              <li>Sunday: Closed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="currentYear"></span> Clearview Screens LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.getElementById('menuToggle');
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      const navLinks = document.getElementById('navLinks');
+      const menuToggle = document.getElementById('menuToggle');
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const successMessage = document.getElementById('successMessage');
+      successMessage.classList.add('show');
+      setTimeout(function() {
+        successMessage.classList.remove('show');
+        document.getElementById('contactForm').reset();
+      }, 3000);
+    });
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
